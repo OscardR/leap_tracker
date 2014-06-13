@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find leap_tracker)/launch/leap_tracker.launch" />
+  <include file="$(find leap_to_sdh)/launch/leap_to_sdh.launch" />
+  <include file="$(find leap_to_arm_cartesian_control)/launch/leap_to_arm_cartesian_control.launch" />
+</launch>

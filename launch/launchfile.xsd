@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="launch">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="node"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="node">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="remap"/>
+            </xs:sequence>
+            <xs:attribute name="name" use="required" type="xs:NCName"/>
+            <xs:attribute name="output" use="required" type="xs:NCName"/>
+            <xs:attribute name="pkg" use="required" type="xs:NCName"/>
+            <xs:attribute name="respawn" use="required" type="xs:boolean"/>
+            <xs:attribute name="type" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="remap">
+        <xs:complexType>
+            <xs:attribute name="from" use="required"/>
+            <xs:attribute name="to" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

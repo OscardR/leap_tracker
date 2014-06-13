@@ -1,0 +1,22 @@
+<!-- DTD package ... -->
+<!-- (C) ... Wed May 28 12:22:42 2014 -->
+<!ELEMENT package (depend|review|url|author|license|description)* >
+<!-- depend=4 | review=1 | url=1 | author=1 | license=1 | description=1 -->
+<!ELEMENT depend  EMPTY >
+	<!-- package : ... -->
+	<!ATTLIST depend package CDATA #IMPLIED >
+<!ELEMENT review  EMPTY >
+	<!-- status : ... -->
+	<!ATTLIST review status CDATA #IMPLIED >
+	<!-- notes : ... -->
+	<!ATTLIST review notes CDATA #IMPLIED >
+<!ELEMENT url (#PCDATA) >
+<!-- #PCDATA=1 -->
+<!ELEMENT author (#PCDATA) >
+<!-- #PCDATA=1 -->
+<!ELEMENT license (#PCDATA) >
+<!-- #PCDATA=1 -->
+<!ELEMENT description (#PCDATA) >
+<!-- #PCDATA=1 -->
+	<!-- brief : ... -->
+	<!ATTLIST description brief CDATA #IMPLIED >

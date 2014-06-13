@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package SYSTEM "manifest.dtd">
+<package>
+	<description brief="leap_tracker">
+		LEAP Controller tracking server. This code provides a tracking server for a LEAP Controller
+		interface. It constantly listens to the controller for new frames and process the
+		hands and fingers data to consistently track individual fingers. It then builds
+		ROS JointState, TwistStamped and PoseStamped messages with the values of the hand's
+		DOF and sends them through the topic "leap_tracker" for whichever translation service
+		listening to that topic to convert them and adapt them to other robot models.
+	</description>
+	<author>Óscar Gómez</author>
+	<license>BSD</license>
+	<review status="unreviewed" notes=""/>
+	<url>http://ros.org/wiki/leap_tracker</url>
+	<depend package="rospy"/>
+	<depend package="std_msgs"/>
+	<depend package="geometry_msgs"/>
+	<depend package="sensor_msgs"/>
+</package>
+
+

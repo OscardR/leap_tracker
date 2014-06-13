@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="launchfile.xsd">
+	<node name="leap_tracker" pkg="leap_tracker" type="leap_tracker.py" respawn="false"
+		output="screen">
+		<remap from="~in" to="~in" />
+		<remap from="~joint_state_out" to="~joint_state_out" />
+		<remap from="~pose_stamped_out" to="~pose_stamped_out" />
+		<remap from="~twist_stamped_out" to="~twist_stamped_out" />
+	</node>
+	<node pkg="tf" type="static_transform_publisher" name="leap_tracker_to_tt_base" args="-0.3 0.6 -0.2 3.141592 0 1.5708 /tt/tt_base /leap_tracker 100" />
+</launch>
