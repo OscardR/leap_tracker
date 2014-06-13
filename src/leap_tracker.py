@@ -5,16 +5,19 @@
 @package leap_tracker
 @file leap_tracker.py
 
-@brief LEAP Controller tracking server.
+@brief LEAP Motion for ROS. 
 
-This code provides a tracking server for a LEAP Controller interface. It 
-constantly listens to the controller for new frames and process the hands
-and fingers data to consistently track individual fingers. 
+This package provides a tracking server for a LEAP Motion device. 
+It constantly listens to the controller for new frames and processes 
+the hands and fingers tracking data. 
 
-It then builds ROS JointState, TwistStamped and PoseStamped messages with
-the values of the hand's DOF and sends them through topics namespaced "leap_tracker" 
-for whichever translation service listening to that topic to convert them
-and adapt them to other robot models.
+It publishes ROS's own JointState, TwistStamped and PoseStamped messages 
+with the values of the hand's position and orientation and the fingers' 
+joints angular values, and sends them all through the topics 
+"leap_tracker/joint_state_out", "leap_tracker/pose_stamped_out" 
+and "leap_tracker/twist_stamped_out" for whichever translation service 
+listening to those topics to convert them and adapt them to any 
+robot model.
 
 @author: Óscar Gómez <oscar.gomez@uji.es>
 @date 14/05/2014
@@ -74,12 +77,12 @@ LOG = Logger()
 
 class LeapServer(Leap.Listener):
     """
-    @brief Main class to get data from the controller. 
+    @brief Main class to get data from the LEAP Motion controller. 
     
     It extends the Leap.Listener class and implements all 
     the event methods defined in it. For more info, check the LEAP Motion API: 
     
-    https://developer.leapmotion.com/documentation/python/api/
+    https://developer.leapmotion.com/documentation/skeletal/python/index.html
     """
     def on_init(self, controller):
         LOG.v("Initialized", "on_init")
@@ -326,7 +329,7 @@ class LeapServer(Leap.Listener):
     
     def test_pose(self):
         """
-        Generates test values for the pose messages.
+        @brief Generates test values for the pose messages.
         """
         t = self.t
         
