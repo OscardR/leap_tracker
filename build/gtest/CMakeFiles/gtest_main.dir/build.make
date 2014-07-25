@@ -31,9 +31,6 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker
 
@@ -80,8 +77,8 @@ gtest_main_OBJECTS = \
 gtest_main_EXTERNAL_OBJECTS =
 
 /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/build.make
 /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest_main.so: /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest.so
+/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/build.make
 /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/lib/libgtest_main.so"
 	cd /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)

@@ -17,13 +17,3 @@ SET(CMAKE_TARGET_DEFINITIONS
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
-
-# The include file search paths:
-SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/include"
-  "/usr/src/gtest/include"
-  "/usr/src/gtest"
-  )
-SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

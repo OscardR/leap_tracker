@@ -56,6 +56,9 @@ FINGER_BONES = ['meta', 'prox', 'mid', 'dist']
 POS_ATTRIBUTES = ['x', 'y', 'z']
 ORI_ATTRIBUTES = ['roll', 'pitch', 'yaw']
 
+# Debug flags
+DEBUG_TEST = False
+
 class Logger:
     """
     @brief Wrapper for ROS logging class. 
@@ -178,8 +181,10 @@ class LeapServer(Leap.Listener):
         """
         @brief Starts transmission of tracking data.
         
-        Starts sending the current tracking values via ROS topic 
-        'leap_tracker' to the LEAP tracking conversion services
+        Starts sending the current tracking values via ROS topics 
+        'leap_tracker/joint_state_out', 'leap_tracker/pose_stamped_out' and 
+        'leap_tracker/twist_stamped_out' to whichever LEAP tracking conversion 
+        services listening to these topics.
         """
 
         # Set publishing rate
@@ -193,7 +198,7 @@ class LeapServer(Leap.Listener):
                 
                 # PoseStamped messages to publish position and 
                 # orientation of each joint
-                ps_msg = self.build_pose_stamped_msg(test=True)
+                ps_msg = self.build_pose_stamped_msg()
                 
                 # TODO: TwistStamped messages to publish linear and
                 # angular velocities of each joint
@@ -275,7 +280,7 @@ class LeapServer(Leap.Listener):
         # return the JointState message
         return js_msg
     
-    def build_pose_stamped_msg(self, test=False):
+    def build_pose_stamped_msg(self):
         """
         @brief PoseStamped builder
         
@@ -287,30 +292,32 @@ class LeapServer(Leap.Listener):
         ps_msg = PoseStamped()
         ps_msg.header.stamp = rospy.Time.now()
         ps_msg.header.frame_id = FRAME_ID
-        
-        # Convert to Quaternions
-        direction = self.hand.direction
-        position = self.hand.palm_position
-        normal = self.hand.palm_normal
-        
-        roll = normal.roll
-        pitch = normal.pitch
-        yaw = direction.yaw
-        
-        quaternion = transformations.quaternion_from_euler(roll, pitch, yaw)
-        
-        # Set orientation quaternion in the message
-        # type(pose) = geometry_msgs.msg.Pose
-        ps_msg.pose.orientation.x = quaternion[0]
-        ps_msg.pose.orientation.y = quaternion[1]
-        ps_msg.pose.orientation.z = quaternion[2]
-        ps_msg.pose.orientation.w = quaternion[3]
             
-        if not test:
+        if not DEBUG_TEST:
+            position = self.hand.palm_position
+
             # Set position values in the message
             for j, attr in enumerate(POS_ATTRIBUTES):
                 val = getattr(position, attr)
-                setattr(ps_msg.pose.position, attr, val)
+                setattr(ps_msg.pose.position, attr, val)    
+            
+            # Get pose
+            direction = self.hand.direction
+            normal = self.hand.palm_normal
+
+            # Convert to Quaternion
+            roll = normal.roll
+            pitch = normal.pitch
+            yaw = direction.yaw
+            
+            quaternion = transformations.quaternion_from_euler(roll, pitch, yaw)
+            
+            # Set orientation quaternion in the message
+            ps_msg.pose.orientation.x = quaternion[0]
+            ps_msg.pose.orientation.y = quaternion[1]
+            ps_msg.pose.orientation.z = quaternion[2]
+            ps_msg.pose.orientation.w = quaternion[3]
+
         else:
             ((x, y, z), (pitch, yaw, roll)) = self.test_pose()
             ps_msg.pose.position.x = x

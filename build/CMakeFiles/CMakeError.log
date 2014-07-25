@@ -1,57 +1,21 @@
-Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec3851278303/fast"
-make[1]: se ingresa al directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3851278303.dir/build.make CMakeFiles/cmTryCompileExec3851278303.dir/build
-make[2]: se ingresa al directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3851278303.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3851278303.dir/CheckSymbolExists.c.o   -c /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec3851278303
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3851278303.dir/link.txt --verbose=1
-/usr/bin/cc         CMakeFiles/cmTryCompileExec3851278303.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3851278303 -rdynamic 
-CMakeFiles/cmTryCompileExec3851278303.dir/CheckSymbolExists.c.o: En la función `main':
-CheckSymbolExists.c:(.text+0x16): referencia a `pthread_create' sin definir
-collect2: error: ld devolvió el estado de salida 1
-make[2]: *** [cmTryCompileExec3851278303] Error 1
-make[2]: se sale del directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
-make[1]: *** [cmTryCompileExec3851278303/fast] Error 2
-make[1]: se sale del directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
-
-File /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <pthread.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef pthread_create
-  return ((int*)(&pthread_create))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1074295129/fast"
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
 make[1]: se ingresa al directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1074295129.dir/build.make CMakeFiles/cmTryCompileExec1074295129.dir/build
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
 make[2]: se ingresa al directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
 /usr/bin/cmake -E cmake_progress_report /home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1074295129.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1074295129.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1074295129
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1074295129.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1074295129.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1074295129 -rdynamic -lpthreads 
-/usr/bin/ld: no se puede encontrar -lpthreads
-collect2: error: ld devolvió el estado de salida 1
-make[2]: *** [cmTryCompileExec1074295129] Error 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld devolvió el estado de salida 1
 make[2]: se sale del directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
-make[1]: *** [cmTryCompileExec1074295129/fast] Error 2
+make[2]: *** [cmTryCompileExec] Error 1
 make[1]: se sale del directorio «/home/oscar/workspace/tombato-uji-ros-code/tombato-hw/leap_tracker/build/CMakeFiles/CMakeTmp»
+make[1]: *** [cmTryCompileExec/fast] Error 2
 
 
