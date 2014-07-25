@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('classsrc_1_1leap__tracker_1_1LeapServe
 </div><!--header-->
 <div class="contents">
 
-<p>Main class to get data from the controller.  
+<p>Main class to get data from the LEAP Motion controller.  
  <a href="classsrc_1_1leap__tracker_1_1LeapServer.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for src.leap_tracker.LeapServer:</div>
@@ -133,6 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af8545f775e2d7ff723ae1dd18bcd5f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">PoseStamped builder.  <a href="#af8545f775e2d7ff723ae1dd18bcd5f39">More...</a><br /></td></tr>
 <tr class="separator:af8545f775e2d7ff723ae1dd18bcd5f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0e7f8dfa013062dab012e50d60634d6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leap__tracker_1_1LeapServer.html#af0e7f8dfa013062dab012e50d60634d6">test_pose</a></td></tr>
+<tr class="memdesc:af0e7f8dfa013062dab012e50d60634d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates test values for the pose messages.  <a href="#af0e7f8dfa013062dab012e50d60634d6">More...</a><br /></td></tr>
 <tr class="separator:af0e7f8dfa013062dab012e50d60634d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -157,11 +158,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a1f78db65e075e38d6ac4d64b36aff71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main class to get data from the controller. </p>
+<div class="textblock"><p>Main class to get data from the LEAP Motion controller. </p>
 <p>It extends the Leap.Listener class and implements all the event methods defined in it. For more info, check the LEAP Motion API:</p>
-<p><a href="https://developer.leapmotion.com/documentation/python/api/">https://developer.leapmotion.com/documentation/python/api/</a> </p>
+<p><a href="https://developer.leapmotion.com/documentation/skeletal/python/index.html">https://developer.leapmotion.com/documentation/skeletal/python/index.html</a> </p>
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00084">84</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00093">93</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a2b2e41ab31b0556a2edf0cf014950f59"></a>
 <div class="memitem">
@@ -180,7 +181,7 @@ Public Attributes</h2></td></tr>
 <p>JointState message builder. </p>
 <p>Builds a JointState message with the current position of the finger joints and its names. </p>
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00225">225</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00236">236</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -192,18 +193,8 @@ Public Attributes</h2></td></tr>
           <td class="memname">def src.leap_tracker.LeapServer.build_pose_stamped_msg </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>test</em> = <code>False</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -211,7 +202,7 @@ Public Attributes</h2></td></tr>
 <p>PoseStamped builder. </p>
 <p>Builds a PoseStamped message with the current position of the hand and its pose. </p>
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00286">286</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00297">297</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -239,7 +230,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00108">108</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00117">117</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -267,7 +258,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00111">111</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00120">120</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -295,7 +286,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00115">115</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00124">124</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -323,7 +314,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00118">118</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00127">127</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -351,7 +342,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00085">85</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00094">94</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -381,7 +372,7 @@ Public Attributes</h2></td></tr>
 
 <p>Shows tracking data on the standard output via the logging system. </p>
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00154">154</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00163">163</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -400,9 +391,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts transmission of tracking data. </p>
-<p>Starts sending the current tracking values via ROS topic '<a class="el" href="namespacesrc_1_1leap__tracker.html">leap_tracker</a>' to the LEAP tracking conversion services </p>
+<p>Starts sending the current tracking values via ROS topics 'leap_tracker/joint_state_out', 'leap_tracker/pose_stamped_out' and 'leap_tracker/twist_stamped_out' to whichever LEAP tracking conversion services listening to these topics. </p>
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00183">183</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00194">194</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -414,23 +405,15 @@ Public Attributes</h2></td></tr>
           <td class="memname">def src.leap_tracker.LeapServer.test_pose </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00325">325</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Generates test values for the pose messages. </p>
+
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00349">349</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -445,7 +428,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00094">94</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00103">103</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -459,7 +442,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00090">90</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00099">99</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -473,7 +456,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00093">93</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00102">102</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -487,7 +470,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00098">98</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00107">107</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -501,7 +484,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00104">104</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00113">113</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -515,7 +498,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00105">105</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00114">114</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -529,7 +512,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00186">186</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00197">197</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -543,7 +526,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00087">87</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00096">96</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -557,7 +540,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00106">106</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
+<p>Definition at line <a class="el" href="leap__tracker_8py_source.html#l00115">115</a> of file <a class="el" href="leap__tracker_8py_source.html">leap_tracker.py</a>.</p>
 
 </div>
 </div>
@@ -570,7 +553,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1leap__tracker.html">leap_tracker</a></li><li class="navelem"><a class="el" href="classsrc_1_1leap__tracker_1_1LeapServer.html">LeapServer</a></li>
-    <li class="footer">Generated on Mon Jun 9 2014 11:38:35 for LEAP Tracker Controller for Tombato by
+    <li class="footer">Generated on Fri Jul 25 2014 10:08:35 for LEAP Tracker Controller for Tombato by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

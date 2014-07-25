@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('leap__tracker_8py.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>LEAP Controller tracking server.  
+<p>LEAP Motion for ROS.  
 <a href="#details">More...</a></p>
 
 <p><a href="leap__tracker_8py_source.html">Go to the source code of this file.</a></p>
@@ -109,7 +109,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for ROS logging class.  <a href="classsrc_1_1leap__tracker_1_1Logger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leap__tracker_1_1LeapServer.html">src.leap_tracker.LeapServer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main class to get data from the controller.  <a href="classsrc_1_1leap__tracker_1_1LeapServer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main class to get data from the LEAP Motion controller.  <a href="classsrc_1_1leap__tracker_1_1LeapServer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -129,6 +129,16 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a78125aa8f7d3e9efbec6c62cdafbb5ff"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a78125aa8f7d3e9efbec6c62cdafbb5ff">src.leap_tracker.NODE_NAME</a> = 'leap_tracker'</td></tr>
+<tr class="separator:a78125aa8f7d3e9efbec6c62cdafbb5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04806b8b2939bd20cc81a5934c2108d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a04806b8b2939bd20cc81a5934c2108d3">src.leap_tracker.FRAME_ID</a> = NODE_NAME</td></tr>
+<tr class="separator:a04806b8b2939bd20cc81a5934c2108d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3e6b018c53a85969ea4187b00171ea"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a6d3e6b018c53a85969ea4187b00171ea">src.leap_tracker.JS_TOPIC</a> = '%s/joint_state_out'</td></tr>
+<tr class="separator:a6d3e6b018c53a85969ea4187b00171ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9a6ccf2d3f14e5521af246ae2673f1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a5d9a6ccf2d3f14e5521af246ae2673f1">src.leap_tracker.PS_TOPIC</a> = '%s/pose_stamped_out'</td></tr>
+<tr class="separator:a5d9a6ccf2d3f14e5521af246ae2673f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8720bc50864fc7bfa929f96b79c62008"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a8720bc50864fc7bfa929f96b79c62008">src.leap_tracker.TS_TOPIC</a> = '%s/twist_stamped_out'</td></tr>
+<tr class="separator:a8720bc50864fc7bfa929f96b79c62008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae670a33eb2fbf551447e394b5c4f7d42"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#ae670a33eb2fbf551447e394b5c4f7d42">src.leap_tracker.FINGER_NAMES</a> = ['thumb', 'index', 'middle', 'ring', 'pinky']</td></tr>
 <tr class="separator:ae670a33eb2fbf551447e394b5c4f7d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4911bbc4620930b5f4db1ca58412cb5c"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a4911bbc4620930b5f4db1ca58412cb5c">src.leap_tracker.FINGER_BONES</a> = ['meta', 'prox', 'mid', 'dist']</td></tr>
@@ -137,19 +147,15 @@ Variables</h2></td></tr>
 <tr class="separator:a92fdd47c567132bca687b9b9acd9c1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85407c979a370284bc62500e9b07c9dd"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a85407c979a370284bc62500e9b07c9dd">src.leap_tracker.ORI_ATTRIBUTES</a> = ['roll', 'pitch', 'yaw']</td></tr>
 <tr class="separator:a85407c979a370284bc62500e9b07c9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d3e6b018c53a85969ea4187b00171ea"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a6d3e6b018c53a85969ea4187b00171ea">src.leap_tracker.JS_TOPIC</a> = 'leap_tracker/joint_state_out'</td></tr>
-<tr class="separator:a6d3e6b018c53a85969ea4187b00171ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d9a6ccf2d3f14e5521af246ae2673f1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a5d9a6ccf2d3f14e5521af246ae2673f1">src.leap_tracker.PS_TOPIC</a> = 'leap_tracker/pose_stamped_out'</td></tr>
-<tr class="separator:a5d9a6ccf2d3f14e5521af246ae2673f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8720bc50864fc7bfa929f96b79c62008"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a8720bc50864fc7bfa929f96b79c62008">src.leap_tracker.TS_TOPIC</a> = 'leap_tracker/twist_stamped_out'</td></tr>
-<tr class="separator:a8720bc50864fc7bfa929f96b79c62008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad863c08da0845ed2fe8ffaddf017ba1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#ad863c08da0845ed2fe8ffaddf017ba1c">src.leap_tracker.DEBUG_TEST</a> = False</td></tr>
+<tr class="separator:ad863c08da0845ed2fe8ffaddf017ba1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43842e539f6f5ba40f9c4e96db428333"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1leap__tracker.html#a43842e539f6f5ba40f9c4e96db428333">src.leap_tracker.LOG</a> = Logger()</td></tr>
 <tr class="separator:a43842e539f6f5ba40f9c4e96db428333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>LEAP Controller tracking server. </p>
-<p>This code provides a tracking server for a LEAP Controller interface. It constantly listens to the controller for new frames and process the hands and fingers data to consistently track individual fingers.</p>
-<p>It then builds ROS JointState, TwistStamped and PoseStamped messages with the values of the hand's DOF and sends them through the topic "leap_tracker" for whichever translation service listening to that topic to convert them and adapt them to other robot models.</p>
+<div class="textblock"><p>LEAP Motion for ROS. </p>
+<p>This package provides a tracking server for a LEAP Motion device. It constantly listens to the controller for new frames and processes the hands and fingers tracking data.</p>
+<p>It publishes ROS's own JointState, TwistStamped and PoseStamped messages with the values of the hand's position and orientation and the fingers' joints angular values, and sends them all through the topics "leap_tracker/joint_state_out", "leap_tracker/pose_stamped_out" and "leap_tracker/twist_stamped_out" for whichever translation service listening to those topics to convert them and adapt them to any robot model.</p>
 <dl class="section author"><dt>Author</dt><dd>: Óscar Gómez <a href="#" onclick="location.href='mai'+'lto:'+'osc'+'ar'+'.go'+'me'+'z@u'+'ji'+'.es'; return false;">oscar<span style="display: none;">.nosp@m.</span>.gom<span style="display: none;">.nosp@m.</span>ez@uj<span style="display: none;">.nosp@m.</span>i.es</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/05/2014 </dd></dl>
 
@@ -160,7 +166,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="leap__tracker_8py.html">leap_tracker.py</a></li>
-    <li class="footer">Generated on Mon Jun 9 2014 11:38:35 for LEAP Tracker Controller for Tombato by
+    <li class="footer">Generated on Fri Jul 25 2014 10:08:35 for LEAP Tracker Controller for Tombato by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
