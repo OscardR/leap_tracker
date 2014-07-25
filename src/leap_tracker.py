@@ -305,30 +305,25 @@ class LeapServer(Leap.Listener):
             direction = self.hand.direction
             normal = self.hand.palm_normal
 
-            # Convert to Quaternion
+            # Get orientation values from hand vectors
             roll = normal.roll
             pitch = normal.pitch
             yaw = direction.yaw
-            
-            quaternion = transformations.quaternion_from_euler(roll, pitch, yaw)
-            
-            # Set orientation quaternion in the message
-            ps_msg.pose.orientation.x = quaternion[0]
-            ps_msg.pose.orientation.y = quaternion[1]
-            ps_msg.pose.orientation.z = quaternion[2]
-            ps_msg.pose.orientation.w = quaternion[3]
 
         else:
             ((x, y, z), (pitch, yaw, roll)) = self.test_pose()
             ps_msg.pose.position.x = x
             ps_msg.pose.position.y = y
             ps_msg.pose.position.z = z
+        
+        # Convert RPY to Quaternion    
+        quaternion = transformations.quaternion_from_euler(roll, pitch, yaw)
             
-            quaternion = transformations.quaternion_from_euler(roll, pitch, yaw)
-            ps_msg.pose.orientation.x = quaternion[0]
-            ps_msg.pose.orientation.y = quaternion[1]
-            ps_msg.pose.orientation.z = quaternion[2]
-            ps_msg.pose.orientation.w = quaternion[3]
+        # Set orientation quaternion in the message
+        ps_msg.pose.orientation.x = quaternion[0]
+        ps_msg.pose.orientation.y = quaternion[1]
+        ps_msg.pose.orientation.z = quaternion[2]
+        ps_msg.pose.orientation.w = quaternion[3]
         
         # return the PoseStamped messages
         print ps_msg
